@@ -6,7 +6,20 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:47:12 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/03 16:47:14 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 15:40:14 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/push_swap.h"
+
+void ft_swap(int *stak)
+{
+    char tmp;
+    
+    if(stak[1])
+    {
+        tmp = stak[0];
+        stak[0] = stak[1];
+        stak[1] = tmp; 
+    }
+}
