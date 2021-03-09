@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:47:12 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/05 15:40:14 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/09 13:41:29 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ft_swap(t_stack *stack)
     t_stack *tmp;
 
     tmp = stack;
-    stack= stack->next 
+    stack= stack->next;
     tmp->next = stack->next;
     stack->next = tmp;
 }
