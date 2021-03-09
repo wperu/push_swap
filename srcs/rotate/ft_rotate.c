@@ -6,14 +6,15 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:47:10 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/05 15:48:24 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/09 13:39:39 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/push_swap.h"
 
 void ft_rotate(t_stack *stack)
 {
-    t_stack *stack;
+    t_stack *tmp;
     
     tmp = stack;
     while (tmp->next)
@@ -25,7 +26,7 @@ void ft_rotate(t_stack *stack)
 
 }
 
-void ft_reverse_rotate(int *stack)
+void ft_reverse_rotate(t_stack *stack)
 {
     t_stack *tmp;
     t_stack *tmp2;
@@ -39,13 +40,20 @@ void ft_reverse_rotate(int *stack)
     tmp->next = stack;
     stack = tmp;
     tmp2->next = NULL;
-    
 }
 
 void ft_managament_rotate(int pile, t_stack *a, t_stack *b)
 {
-    if(pile == 1 || pile == 0) && a && a->next)
+    if((pile == 1 || pile == 0) && a && a->next)
         ft_rotate(a);
-    if(pile == 2 || pile == 0) && b && b->next)
+    if((pile == 2 || pile == 0) && b && b->next)
         ft_rotate(b);
+}
+
+void ft_management_rotate_rev(int pile, t_stack *a, t_stack *b)
+{
+    if((pile == 1 || pile == 0) && a && a->next)
+        ft_reverse_rotate(a);
+    if((pile == 2 || pile == 0) && b && b->next)
+        ft_reverse_rotate(b);
 }
