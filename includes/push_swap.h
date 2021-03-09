@@ -17,16 +17,16 @@
 # include <unistd.h>
 # include <libft/libft.h>
 
-typedef struct          s_list
+typedef struct          s_stack
 {
     int                 elem;
-    struct s_list       *next;
-}                       t_list;
+    struct s_stack       *next;
+}                       t_stack;
 
 
-void    ft_push(int *a, int *b);
-void    ft_swap(int *stack);
-void    ft_rotate(int *stack);
-void    ft_reverse_rotate(int *stack);
+void    ft_push(t_stack *a, t_stack *b);
+void    ft_swap(t_stack *stack);
+void    ft_rotate(t_stack *stack);
+void    ft_reverse_rotate(t_stack *stack);
 
 #endif 

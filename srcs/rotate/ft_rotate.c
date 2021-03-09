@@ -11,41 +11,41 @@
 /* ************************************************************************** */
 
 
-void ft_rotate(int *stack)
+void ft_rotate(t_stack *stack)
 {
-    int i;
-    int len;
-    int last;
+    t_stack *stack;
+    
+    tmp = stack;
+    while (tmp->next)
+        tmp= tmp->next;
+    tmp->next = stack;
+    tmp = stack;
+    stack = stack->next;
+    tmp->next = NULL;
 
-    i = 0;
-    len = 0;
-    last = stack[0];
-    while(stack[len])
-        len++;
-    while(i<len-1)
-    {
-        stack[i]= stack[i+1];
-        i++;
-    }
-    stack[i] = last;
 }
 
 void ft_reverse_rotate(int *stack)
 {
-    int i;
-    int len;
-    int first;
+    t_stack *tmp;
+    t_stack *tmp2;
 
-    i = 0;
-    len = 0;
-    first = 0;
-    while(stack[len])
-        len++;
-    first = stack[len - 1];
-    while(len > i)
-    {
-        len--;
-        stack[len] = stack[len - 1];
-    }
-    stack[0] = first;
+    tmp = stack;
+    tmp2 = stack;
+    while(tmp->next)
+        tmp = tmp->next;
+    while(tmp2->next)
+        tmp2 = tmp2->next;
+    tmp->next = stack;
+    stack = tmp;
+    tmp2->next = NULL;
+    
+}
+
+void ft_managament_rotate(int pile, t_stack *a, t_stack *b)
+{
+    if(pile == 1 || pile == 0) && a && a->next)
+        ft_rotate(a);
+    if(pile == 2 || pile == 0) && b && b->next)
+        ft_rotate(b);
 }

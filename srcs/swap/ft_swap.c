@@ -12,14 +12,21 @@
 
 #include "../../includes/push_swap.h"
 
-void ft_swap(int *stak)
+void ft_swap(t_stack *stack)
 {
-    char tmp;
-    
-    if(stak[1])
-    {
-        tmp = stak[0];
-        stak[0] = stak[1];
-        stak[1] = tmp; 
-    }
+    t_stack *tmp;
+
+    tmp = stack;
+    stack= stack->next 
+    tmp->next = stack->next;
+    stack->next = tmp;
+}
+
+void    ft_management_swap(int pile, t_stack *a, t_stack *b)
+{
+    if((pile == 1 || pile == 0) && a && a->next)
+        ft_swap(a);
+    if((pile == 2 || pile == 0) && b && b->next)
+        ft_swap(b);
+
 }
