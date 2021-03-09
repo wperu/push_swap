@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:51:31 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/09 14:59:12 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/09 15:30:49 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void getcom(t_com *com)
     while(get_next_line(0, &str) == 1)
     {   
         ft_com(ft_checkcom(str), com);
-        ft_freestr(&str);
+        ft_free(&str);
     }
 }
 
