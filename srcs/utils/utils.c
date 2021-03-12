@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:14:49 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 16:38:30 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 17:11:36 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ t_stack *ft_nstack(int nbr, t_stack **stack)
 		*stack = nstack;
 	else
 	{
-		while(tmp)
+		while(tmp->next)
 			tmp = tmp->next;
 		tmp->next = nstack;
 	}
