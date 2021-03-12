@@ -2,11 +2,11 @@ NAME			=		push_swap
 
 INC_DIR			=		includes
 
-HEADER			=		includes/push_swap.h
+HEADER			=		includes/push_swap.h get_next_line/get_next_line.h
 
 CC				=		gcc
 
-CFLAGS			=		-Wall -Wextra -Werror
+CFLAGS			=		-Wall -Wextra -Werror -g3 -fsanitize=address
 
 SRCS			=	\
 					main.c \
@@ -15,6 +15,7 @@ SRCS			=	\
 					$(addprefix utils/, utils.c ft_del.c) \
 					$(addprefix rotate/, ft_rotate.c) \
 					$(addprefix swap/, ft_swap.c) \
+					$(addprefix get_next_line/, get_next_line.c get_next_line_utils.c) \
 
 
 OBJS			= 		$(addprefix srcs/, $(SRCS:.c=.o))
@@ -25,10 +26,10 @@ all				: 		$(NAME)
 
 $(NAME)		: $(OBJS)
 		@make -C libft
-		@$(CC) $(CFLAGS) $(OBJS) -I $(HEADERS) $(LIB) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJS) -I libft -L libft -lft $(HEADERS) -o $(NAME)
 
 %.o: %.c $(HEADERS)
-		@$(CC) $(CFLAGS) -c $< -o $@ -I $(INC_DIR)
+		$(CC) $(CFLAGS) -c $< -o $@ -I $(INC_DIR)
 
 bonus		:		$(NAME)
 
@@ -41,3 +42,5 @@ fclean		:		clean
 		@make fclean -C libft
 
 re			:		fclean all
+
+$(VERBOSE).SILENT:
