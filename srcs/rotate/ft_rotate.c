@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:47:10 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/09 13:39:39 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 15:37:01 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void ft_reverse_rotate(t_stack *stack)
     tmp2->next = NULL;
 }
 
-void ft_managament_rotate(int pile, t_stack *a, t_stack *b)
+void ft_management_rotate(int pile, t_stack *a, t_stack *b)
 {
     if((pile == 1 || pile == 0) && a && a->next)
         ft_rotate(a);

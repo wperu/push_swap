@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:40:35 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/10 16:39:34 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 16:36:19 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int     ft_pile(char *str)
     {
         if(str[i+1] == '\0')
             c = str[i];
+        i++;
     }
     if(c == 'a')
         return(1);
@@ -34,13 +35,13 @@ int     ft_pile(char *str)
 
 
 
-void ft_com(char *str, t_com *com)
+t_com *ft_com(char *str, t_com **com)
 {
     t_com *tmp;
     t_com *ncom;
 
 
-    tmp = com;
+    tmp = *com;
     if(!(ncom = (t_com*)malloc(sizeof(t_com))))
         return (NULL);
     if(ft_strnstr("sa sb ss",str,9))
@@ -53,29 +54,30 @@ void ft_com(char *str, t_com *com)
         ncom->com = rr;
     ncom->pile = ft_pile(str);
     ncom->next = NULL;
-    if(com = NULL)
-        com = ncom;
+    if(*com == NULL)
+        *com = ncom;
     else
     {
-        while (tmp)
+        while (tmp->next)
             tmp = tmp->next;
         tmp->next=ncom;
     }
+    return(ncom);
 }
 
 char *ft_checkcom(char *str)
 {
-    if(ft_strcmp(str,"sa") != 0 && 
-    ft_strcmp(str,"sb") != 0 &&
-    ft_strcmp(str,"ss") != 0 &&
-    ft_strcmp(str,"pa") != 0 &&
-    ft_strcmp(str,"pb") != 0 &&
-    ft_strcmp(str,"ra") != 0 &&
-    ft_strcmp(str,"rb") != 0 &&
-    ft_strcmp(str,"rr") != 0 &&
-    ft_strcmp(str,"rra") != 0 &&
-    ft_strcmp(str,"rrb") != 0 &&
-    ft_strcmp(str,"rrr") != 0)
+    if(strcmp(str,"sa") != 0 && 
+    strcmp(str,"sb") != 0 &&
+    strcmp(str,"ss") != 0 &&
+    strcmp(str,"pa") != 0 &&
+    strcmp(str,"pb") != 0 &&
+    strcmp(str,"ra") != 0 &&
+    strcmp(str,"rb") != 0 &&
+    strcmp(str,"rr") != 0 &&
+    strcmp(str,"rra") != 0 &&
+    strcmp(str,"rrb") != 0 &&
+    strcmp(str,"rrr") != 0)
     {
         ft_putstr_fd("Error\n", 2);
         exit(1);
@@ -83,15 +85,16 @@ char *ft_checkcom(char *str)
     return(str);
 }
 
-void ft_getcom(t_com *com)
+int ft_getcom(t_com *com)
 {
     char *str;
 
     str = NULL;
     while(get_next_line(0, &str) == 1)
     {   
-        ft_com(ft_checkcom(str), com);
+        ft_com(ft_checkcom(str), &com);
         free(str);
         str = NULL;
     }
+    return(1);
 }

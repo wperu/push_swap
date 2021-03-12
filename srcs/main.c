@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:51:31 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/10 16:44:02 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 16:39:01 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,17 @@ void ft_start(t_stack *a, t_stack *b, unsigned int len)
     t_com *com;
 
     com = NULL;
-    ft_getcom(com);
-    ft_excute(com, a, b);
-    if(ft_checker(a, len) == 1)
-        ft_putstr_fd("OK\n",1);
-    else
-        ft_putstr_fd("KO\n",1);
-    delstack(a);
-    delstack(b);
-    delcom(com);
+    if(ft_getcom(com) == 1)
+    {
+        ft_excute(com, a, b);
+        if(ft_checker(a, len) == 1)
+            ft_putstr_fd("OK\n",1);
+        else
+            ft_putstr_fd("KO\n",1);
+        delstack(a);
+        delstack(b);
+        delcom(com);
+    }
 }
 
 int main(int ac, char **av)
@@ -78,6 +80,6 @@ int main(int ac, char **av)
     a = NULL;
     b = NULL;
     if(ac > 1)
-        ft_start(a,b,ft_getlen(av + 1, ac - 1, a));
+        ft_start(a,b,ft_getstack(av + 1, ac - 1, a));
     return(0);
 }

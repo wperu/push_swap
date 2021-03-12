@@ -6,17 +6,19 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:50:42 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/10 17:11:55 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 16:38:51 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUAH_SWAP_H
+# define PUSH_SWAP_H
 
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <../libft/libft.h>
+# include "../libft/libft.h"
+# include "../srcs/get_next_line/get_next_line.h"
 
 typedef struct          s_stack
 {
@@ -49,15 +51,16 @@ void			ft_get_stack(char **list, t_stack *a);
 void			ft_start(t_stack *a, t_stack *b, unsigned int len);
 int				ft_checker(t_stack *a, unsigned int len);
 char			*ft_checkcom(char *str);
-void			ft_getcom(t_com *com);
-void			ft_com(char *str, t_com *com);
-unsigned int	ft_getlen(char **str, int size, t_stack *a);
+int				ft_getcom(t_com *com);
+t_com			*ft_com(char *str, t_com **com);
+unsigned int	ft_getstack(char **str, int size, t_stack *a);
 void 			delcom(t_com *com);
 void			delstack(t_stack *stack);
 int				ft_digitstr(char *str);
 int				ft_get_int(char *str);
 int         	ft_isnbr(char *str, t_stack *a);
-t_stack 		*ft_nstack(int nbr, t_stack *stack);
+t_stack 		*ft_nstack(int nbr, t_stack **stack);
 int     		ft_pile(char *str);
+void			ft_excute(t_com *com, t_stack *a, t_stack *b);
 
 #endif 

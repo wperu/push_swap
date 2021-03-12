@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:14:49 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/10 16:34:29 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 16:38:30 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int         ft_isnbr(char *str, t_stack *a)
 
     nbr = 0;
     ft_digitstr(str);
-    nbr = ft_get_int(*str);
+    nbr = ft_get_int(str);
     while(a)
     {
         if(a->elem == nbr)
@@ -68,18 +68,18 @@ int         ft_isnbr(char *str, t_stack *a)
     return(nbr);
 }
 
-t_stack *ft_nstack(int nbr, t_stack *stack)
+t_stack *ft_nstack(int nbr, t_stack **stack)
 {
 	t_stack *tmp;
 	t_stack *nstack;
 
-	tmp = stack;
+	tmp = *stack;
 	if(!(nstack= (t_stack *)malloc(sizeof(t_stack))))
 		return(NULL);
 	nstack->elem = nbr;
 	nstack->next = NULL;
-	if(stack == NULL)
-		stack = nstack;
+	if(*stack == NULL)
+		*stack = nstack;
 	else
 	{
 		while(tmp)
@@ -89,9 +89,9 @@ t_stack *ft_nstack(int nbr, t_stack *stack)
 	return(nstack);
 }
 
-unsigned int ft_getlen(char **str, int size, t_stack *a)
+unsigned int ft_getstack(char **str, int size, t_stack *a)
 {
-    unsigned int i;
+    int i;
 
     i = 0;
     if(size == 1)
@@ -100,7 +100,7 @@ unsigned int ft_getlen(char **str, int size, t_stack *a)
     {
         while(i < size)
         {
-            if(!(ft_nstack(ft_isnbr(str[i],a),a)))
+            if(!(ft_nstack(ft_isnbr(str[i],a),&a)))
             {
                 ft_putstr_fd("Error\n",2);
                 exit(1);
