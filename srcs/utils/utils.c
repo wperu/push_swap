@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:14:49 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 17:11:36 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 15:36:38 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ t_stack *ft_nstack(int nbr, t_stack **stack)
 	return(nstack);
 }
 
-unsigned int ft_getstack(char **str, int size, t_stack *a)
+unsigned int ft_getstack(char **str, int size, t_stack **a)
 {
     int i;
 
@@ -100,7 +100,7 @@ unsigned int ft_getstack(char **str, int size, t_stack *a)
     {
         while(i < size)
         {
-            if(!(ft_nstack(ft_isnbr(str[i],a),&a)))
+            if(!(ft_nstack(ft_isnbr(str[i],*a),a)))
             {
                 ft_putstr_fd("Error\n",2);
                 exit(1);

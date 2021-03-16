@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:40:35 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 16:36:19 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 16:23:02 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_com *ft_com(char *str, t_com **com)
         ncom->com = p;
     if(ft_strnstr("ra rb rr",str,9))
         ncom->com = r;
-    if(ft_strnstr("rra rrb rrr",str,12))
+    if(ft_strnstr("rra rrb rrr",str,12) && ncom->com != r )
         ncom->com = rr;
     ncom->pile = ft_pile(str);
     ncom->next = NULL;
@@ -85,16 +85,15 @@ char *ft_checkcom(char *str)
     return(str);
 }
 
-int ft_getcom(t_com *com)
+void ft_getcom(t_com **com)
 {
     char *str;
 
     str = NULL;
     while(get_next_line(0, &str) == 1)
     {   
-        ft_com(ft_checkcom(str), &com);
+        ft_com(ft_checkcom(str), com);
         free(str);
         str = NULL;
     }
-    return(1);
 }

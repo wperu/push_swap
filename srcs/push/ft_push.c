@@ -6,26 +6,26 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:47:08 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 15:35:14 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 15:22:12 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void ft_push(t_stack *src, t_stack *dst)
+void ft_push(t_stack **src, t_stack **dst)
 {
     t_stack *tmp;
 
-    tmp = src;
-    src = src->next;
-    tmp->next = dst;
-    dst = tmp;
+    tmp = *src;
+    *src = (*src)->next;
+    tmp->next = *dst;
+    *dst = tmp;
 }
 
-void    ft_management_push(int pile, t_stack *a, t_stack *b)
+void    ft_management_push(int pile, t_stack **a, t_stack **b)
 {
-    if(pile == 1 && a != NULL)
+    if(pile == 1 && *a != NULL)
         ft_push(a,b);
-    if(pile == 2 && b != NULL)
+    if(pile == 2 && *b != NULL)
         ft_push(b,a);
 }

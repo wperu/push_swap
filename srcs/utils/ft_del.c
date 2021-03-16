@@ -6,21 +6,21 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:44:34 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/10 17:03:00 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 15:33:25 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void delstack(t_stack *stack)
+void delstack(t_stack **stack)
 {
     t_stack *tmp;
 
-    tmp = stack;
-    while(stack)
+    tmp = *stack;
+    while(*stack)
     {
-        tmp = stack;
-        stack = stack->next;
+        tmp = *stack;
+        *stack = (*stack)->next;
         free(tmp);
         tmp = NULL;
     }
