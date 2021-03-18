@@ -26,8 +26,6 @@ void	ft_excute(t_com *com, t_stack **a, t_stack **b)
 		else if(com->com == rr)
 			ft_management_rotate_rev(com->pile,a,b);
         ft_display_stack(*a);
-        /*if(op == 1)
-            display(*a,*b,com);*/
 		com = com->next;
 	}
 }
