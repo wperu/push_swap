@@ -6,11 +6,11 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:51:31 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/17 18:14:12 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/18 17:27:54 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 
 void	ft_excute(t_com *com, t_stack **a, t_stack **b)
 {

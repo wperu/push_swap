@@ -2,7 +2,7 @@ NAME			=		checker
 
 INC_DIR			=		includes
 
-HEADER			=		includes/push_swap.h get_next_line/get_next_line.h
+HEADER			=		includes/checker.h get_next_line/get_next_line.h
 
 CC				=		gcc
 

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 16:50:42 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/17 17:20:13 by wperu            ###   ########lyon.fr   */
+/*   Created: 2021/04/17 18:44:59 by wperu             #+#    #+#             */
+/*   Updated: 2021/04/18 17:24:15 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -63,6 +63,5 @@ t_stack 		*ft_nstack(int nbr, t_stack **stack);
 int     		ft_pile(char *str);
 void			ft_excute(t_com *com, t_stack **a, t_stack **b);
 long			ft_atol(const char *str);
-
-void ft_display_stack(t_stack *stack);
+void			ft_display_stack(t_stack *stack);
 #endif 
