@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 18:03:59 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/18 17:43:43 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 19:07:04 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef struct          s_stack
 
 int				ft_sort_two(t_stack **a);
 int				ft_sort_tree(t_stack **a);
+int			 	ft_sort_five(t_stack **a, t_stack **b);
+int			 	ft_range_top_a(t_stack **a, int pos);
+int			 	ft_pos_a(t_stack **a, t_stack **b, int pos);
 int				ft_sa_print(t_stack **a);
 int				ft_sa_rra_print(t_stack **a);
 int				ft_ra_print(t_stack **a);
@@ -47,4 +50,7 @@ int				ft_pile(char *str);
 long			ft_atol(const char *str);
 int 			ft_correct_order(t_stack *a);
 void			ft_start_push(t_stack **a, t_stack **b, unsigned int len);
+int			 	ft_push_start(t_stack **a, t_stack **b);
+int			 	small_find(t_stack *a);
+int			 	big_find(t_stack *a);
 #endif

@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 18:03:38 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/18 17:50:40 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 16:49:53 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void ft_start_push(t_stack **a, t_stack **b, unsigned int len)
 		ft_sort_two(a);
 	if(len == 3)
 		ft_sort_tree(a);
+	if(len == 5)
+		ft_sort_five(a,b);
     
     //ft_display_stack(*a);
   //  if(ft_checker(*a, len) == 1);
