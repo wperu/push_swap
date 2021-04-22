@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 18:03:38 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/22 17:23:33 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 18:55:53 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void ft_start_push(t_stack **a, t_stack **b, unsigned int len)
 	if(len > 5)
 		med_stack(a,b,len);
     
-   ft_display_stack(*a);
+   //ft_display_stack(*a);
   //  if(ft_checker(*a, len) == 1);
     delstack(a);
     delstack(b);
