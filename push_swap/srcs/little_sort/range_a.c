@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 17:19:33 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/19 17:28:18 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 17:27:20 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int ra_repeat(t_stack **a, int pos)
 	int i;
 
 	i = 0;
-	puts("ok");
 	while(pos != 0)
 	{
 		ft_rotate(a);
@@ -71,7 +70,7 @@ int ft_pos_a(t_stack **a, t_stack **b, int pos)
 	if(*b)
     {
         if(topb > big_find(*a) || topb < small_find(*a))
-            sort_big_or_small(b,a);
+            sort_a_big_or_small(b,a);
         else
         {
             while(tmpa)

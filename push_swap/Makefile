@@ -15,6 +15,7 @@ SRCS			=	\
 					$(addprefix rotate/, ft_rotate.c) \
 					$(addprefix swap/, ft_swap.c) \
 					$(addprefix finder/, find.c) \
+					$(addprefix big_sort/, b_print.c med_stack.c utils.c) \
 					$(addprefix little_sort/, utils.c ft_sort_five.c range_a.c)\
 
 

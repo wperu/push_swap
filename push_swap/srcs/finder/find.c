@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 17:29:21 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/19 17:36:24 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 17:00:38 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,19 @@ int ft_small_pos_b(t_stack *b, int small)
 		pos++;
 	}
 	return (pos);
+}
+
+int             pos_small_find(t_stack *a, int pos, int small)
+{
+	int i;
+
+	i = -1;
+	while(a)
+	{
+		i++;
+		if(small == a->elem)
+			pos = i++;
+		a = a->next;
+	}
+	return(pos);
 }

@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 18:03:59 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/19 19:07:04 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 17:09:27 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ int	ft_lststack(t_stack *lst);
 int				ft_sort_two(t_stack **a);
 int				ft_sort_tree(t_stack **a);
 int			 	ft_sort_five(t_stack **a, t_stack **b,int len);
+int             med_stack(t_stack **a, t_stack**b, int len);
 int			 	ft_range_top_a(t_stack **a, int pos);
+int             ft_range_top_b(t_stack **b, int pos);
 int			 	ft_pos_a(t_stack **a, t_stack **b, int pos);
+int             pos_for_b(t_stack **a, t_stack **b);
 int				ft_sa_print(t_stack **a);
 int				ft_sa_rra_print(t_stack **a);
 int				ft_ra_print(t_stack **a);
@@ -55,10 +58,21 @@ int			 	ft_push_start(t_stack **a, t_stack **b, int len);
 int			 	small_find(t_stack *a);
 int			 	big_find(t_stack *a);
 int             sort_a_big_or_small(t_stack **a,t_stack **b);
+int             sort_b_big_or_small(t_stack **a,t_stack **b);
 int             rra_repeat(t_stack **a, int pos);
 int             ra_repeat(t_stack **a, int pos);
 int             rb_repeat(t_stack **b, int pos);
 int             rrb_repeat(t_stack **b, int pos);
 int             ft_small_pos_b(t_stack *b, int small);
 int             pos_test(t_stack *a, int small);
+int             ft_range(t_stack *a, int local_max);
+int             push_b_print(t_stack **a, t_stack **b);
+int             ft_b_empty_or_one(t_stack **a, t_stack **b);
+int             manager_b_oh(t_stack **a, t_stack **b, int tot);
+int             rb_rrb_oho(t_stack **a, t_stack **b, int pos, int i);
+int             rb_rrb_oh_two(t_stack **a, t_stack **b, int pos, int tot);
+int             pos_small_find(t_stack *a, int pos, int small);
+int             med_stack(t_stack **a, t_stack **b ,int i);
+int             a_handle_while_range(t_stack **a,t_stack **b,int range_pos, int chunk);
+
 #endif
