@@ -54,9 +54,11 @@ void			ft_start_push(t_stack **a, t_stack **b, unsigned int len);
 int			 	ft_push_start(t_stack **a, t_stack **b, int len);
 int			 	small_find(t_stack *a);
 int			 	big_find(t_stack *a);
-int             sort_big_or_small(t_stack **a,t_stack **b);
+int             sort_a_big_or_small(t_stack **a,t_stack **b);
 int             rra_repeat(t_stack **a, int pos);
 int             ra_repeat(t_stack **a, int pos);
+int             rb_repeat(t_stack **b, int pos);
+int             rrb_repeat(t_stack **b, int pos);
 int             ft_small_pos_b(t_stack *b, int small);
 int             pos_test(t_stack *a, int small);
 #endif

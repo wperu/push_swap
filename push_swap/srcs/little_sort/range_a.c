@@ -45,7 +45,7 @@ int rra_repeat(t_stack **a, int pos)
 	return(i);
 }
 
-int     sort_big_or_small(t_stack **a,t_stack **b)
+int     sort_a_big_or_small(t_stack **a,t_stack **b)
 {
     int large;
     int small;

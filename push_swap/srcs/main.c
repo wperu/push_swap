@@ -87,6 +87,8 @@ void ft_start_push(t_stack **a, t_stack **b, unsigned int len)
 		ft_sort_tree(a);
 	if(len == 5 || len == 4)
 		ft_sort_five(a,b,len);
+	if(len > 5)
+		ft_sort_med_large(a,b,len);
     
    // ft_display_stack(*a);
   //  if(ft_checker(*a, len) == 1);
