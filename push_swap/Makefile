@@ -14,7 +14,8 @@ SRCS			=	\
 					$(addprefix utils/, utils.c ft_del.c) \
 					$(addprefix rotate/, ft_rotate.c) \
 					$(addprefix swap/, ft_swap.c) \
-					$(addprefix little_sort/, utils.c ft_sort_five.c)\
+					$(addprefix finder/, find.c) \
+					$(addprefix little_sort/, utils.c ft_sort_five.c range_a.c)\
 
 
 OBJS			= 		$(addprefix srcs/, $(SRCS:.c=.o))

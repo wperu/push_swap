@@ -17,10 +17,9 @@ int small_find(t_stack *a)
 	int small;
 
 	small = a->elem;
-	a = a->next;
-	while(a)
+	while(a != NULL)
 	{
-		if(small > a->elem)
+		if(small >= a->elem)
 			small = a->elem;
 		a = a->next;
 	}
@@ -32,12 +31,26 @@ int big_find(t_stack *a)
 	int big;
 
 	big = a->elem;
-	a = a->next;
-	while(a)
+	while(a != NULL)
 	{
-		if(big < a->elem)
+		if(big <= a->elem)
 			big = a->elem;
 		a = a->next;
 	}
 	return(big);
+}
+
+int ft_small_pos_b(t_stack *b, int small)
+{
+	int pos;
+
+	pos = 0;
+	while(b)
+	{
+		if(b->elem == small)
+			return (pos);
+		b = b->next;
+		pos++;
+	}
+	return (pos);
 }

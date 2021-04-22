@@ -12,6 +12,55 @@
 
 #include "../../includes/push_swap.h"
 
+int ra_repeat(t_stack **a, int pos)
+{
+	int i;
+
+	i = 0;
+	puts("ok");
+	while(pos != 0)
+	{
+		ft_rotate(a);
+		ft_putstr_fd("ra\n",1);
+		pos--;
+		i++;
+	}
+	return(i);
+}
+
+
+int rra_repeat(t_stack **a, int pos)
+{
+	int i;
+	
+	i = 0;
+	pos = ft_lststack(*a) - pos;
+	i = pos;
+	while(pos != 0)
+	{
+		ft_reverse_rotate(a);
+		ft_putstr_fd("rra\n",1);
+		pos--;
+	}
+	return(i);
+}
+
+int     sort_big_or_small(t_stack **a,t_stack **b)
+{
+    int large;
+    int small;
+    int small_pos;
+	int i;
+
+	i = 0;
+	large = big_find(*b);
+	small = small_find(*b);
+	small_pos = ft_small_pos_b(*b,small);
+	if((*a)->elem < small || (*a)->elem > large)
+		i +=ft_range_top_a(b, small_pos);
+	return (i);
+}
+
 int ft_pos_a(t_stack **a, t_stack **b, int pos)
 {
 	int topb;
@@ -43,23 +92,30 @@ int ft_pos_a(t_stack **a, t_stack **b, int pos)
 int ft_range_top_a(t_stack **a, int pos)
 {
 	int i;
+	int t;
 
 	i = 0;
-	if(pos == 1)
-		i += ft_sa_print(a);
-	if(pos == 2 && ft_lstsize((t_list *)(*a)) == 4)
+	t = ft_lststack(*a);
+//	printf("t = %d\n",t/2);
+//	printf("pos = %d\n",pos);
+	if(pos < t / 2)
+		i += ra_repeat(a,pos);
+	if(pos >= t / 2)
+		i += rra_repeat(a,pos);
+	return (i);
+}
+
+int	ft_lststack(t_stack *lst)
+{
+	int	size;
+
+	size = 0;
+	while (lst)
 	{
-		i += ft_ra_print(a);
-		i += ft_rra_print(a);
+			if(lst)
+				size++;
+		lst = lst->next;
+		
 	}
-	if((pos == 3  && ft_lstsize((t_list *)(*a)) == 4) || (pos == 2 && ft_lstsize((t_list *)(*a)) == 3))
-	{
-		i += ft_rra_print(a);
-		i += ft_sa_print(a);
-		i += ft_ra_print(a);
-		i += ft_ra_print(a);
-	}
-	if((pos == 4 && ft_lstsize((t_list *)(*a)) == 4)|| (pos == 3 && ft_lstsize((t_list *)(*a)) == 3))
-		i += ft_ra_print(a);
-	return(i);
+	return (size);
 }

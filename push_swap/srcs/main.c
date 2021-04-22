@@ -65,17 +65,30 @@ int	ft_sort_tree(t_stack **a)
 
 }
 
+void ft_display_stack(t_stack *stack)
+{
+    t_stack *tmp;
+
+    tmp = stack;
+    printf("\n");
+    while(tmp)
+    {
+        printf("%d\n",tmp->elem);
+        tmp=tmp->next;
+    }
+}
+
 void ft_start_push(t_stack **a, t_stack **b, unsigned int len)
 {
-	printf("len = %d\n",len);
+	//printf("len = %d\n",len);
 	if(len == 2)
 		ft_sort_two(a);
 	if(len == 3)
 		ft_sort_tree(a);
-	if(len == 5)
-		ft_sort_five(a,b);
+	if(len == 5 || len == 4)
+		ft_sort_five(a,b,len);
     
-    //ft_display_stack(*a);
+   // ft_display_stack(*a);
   //  if(ft_checker(*a, len) == 1);
     delstack(a);
     delstack(b);

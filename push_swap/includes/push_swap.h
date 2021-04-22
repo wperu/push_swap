@@ -24,9 +24,10 @@ typedef struct          s_stack
     struct s_stack       *next;
 }                       t_stack;
 
+int	ft_lststack(t_stack *lst);
 int				ft_sort_two(t_stack **a);
 int				ft_sort_tree(t_stack **a);
-int			 	ft_sort_five(t_stack **a, t_stack **b);
+int			 	ft_sort_five(t_stack **a, t_stack **b,int len);
 int			 	ft_range_top_a(t_stack **a, int pos);
 int			 	ft_pos_a(t_stack **a, t_stack **b, int pos);
 int				ft_sa_print(t_stack **a);
@@ -50,7 +51,12 @@ int				ft_pile(char *str);
 long			ft_atol(const char *str);
 int 			ft_correct_order(t_stack *a);
 void			ft_start_push(t_stack **a, t_stack **b, unsigned int len);
-int			 	ft_push_start(t_stack **a, t_stack **b);
+int			 	ft_push_start(t_stack **a, t_stack **b, int len);
 int			 	small_find(t_stack *a);
 int			 	big_find(t_stack *a);
+int             sort_big_or_small(t_stack **a,t_stack **b);
+int             rra_repeat(t_stack **a, int pos);
+int             ra_repeat(t_stack **a, int pos);
+int             ft_small_pos_b(t_stack *b, int small);
+int             pos_test(t_stack *a, int small);
 #endif
