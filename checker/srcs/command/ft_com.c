@@ -6,11 +6,11 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:40:35 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/17 17:20:35 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/23 16:10:04 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes/checker.h"
 
 int     ft_pile(char *str)
 {
