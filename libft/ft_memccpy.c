@@ -6,10 +6,9 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:02:31 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 13:45:27 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/24 16:41:58 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -19,8 +18,8 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	d = (unsigned char*)dest;
-	s = (unsigned char*)src;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{

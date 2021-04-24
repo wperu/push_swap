@@ -6,18 +6,17 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:48:32 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 13:44:16 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/24 16:38:57 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int negative;
-	int result;
+	int	i;
+	int	negative;
+	int	result;
 
 	result = 0;
 	negative = 1;

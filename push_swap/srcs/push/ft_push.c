@@ -6,7 +6,7 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:47:08 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/18 17:27:11 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/23 17:59:24 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_push(t_stack **src, t_stack **dst)
 
 void	ft_management_push(int pile, t_stack **a, t_stack **b)
 {
-	if(pile == 2 && *a != NULL)
-		ft_push(a,b);
-	if(pile == 1 && *b != NULL)
-		ft_push(b,a);
+	if (pile == 2 && *a != NULL)
+		ft_push(a, b);
+	if (pile == 1 && *b != NULL)
+		ft_push(b, a);
 }

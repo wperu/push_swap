@@ -6,7 +6,7 @@ HEADER			=		includes/push_swap.h
 
 CC				=		gcc
 
-CFLAGS			=		-Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS			=		-Wall -Wextra -Werror -g3 -fsanitize=leak
 
 SRCS			=	\
 					main.c \
@@ -15,7 +15,7 @@ SRCS			=	\
 					$(addprefix rotate/, ft_rotate.c) \
 					$(addprefix swap/, ft_swap.c) \
 					$(addprefix finder/, find.c) \
-					$(addprefix big_sort/, b_print.c med_stack.c utils.c) \
+					$(addprefix big_sort/, b_print.c med_stack.c utils.c large_stack.c) \
 					$(addprefix little_sort/, utils.c ft_sort_five.c range_a.c)\
 
 

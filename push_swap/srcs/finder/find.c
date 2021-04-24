@@ -6,48 +6,48 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 17:29:21 by wperu             #+#    #+#             */
-/*   Updated: 2021/04/22 17:00:38 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/23 17:58:06 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int small_find(t_stack *a)
+int	small_find(t_stack *a)
 {
-	int small;
+	int	small;
 
 	small = a->elem;
-	while(a != NULL)
+	while (a != NULL)
 	{
-		if(small >= a->elem)
+		if (small >= a->elem)
 			small = a->elem;
 		a = a->next;
 	}
-	return(small);
+	return (small);
 }
 
-int big_find(t_stack *a)
+int	big_find(t_stack *a)
 {
-	int big;
+	int	big;
 
 	big = a->elem;
-	while(a != NULL)
+	while (a != NULL)
 	{
-		if(big <= a->elem)
+		if (big <= a->elem)
 			big = a->elem;
 		a = a->next;
 	}
-	return(big);
+	return (big);
 }
 
-int ft_small_pos_b(t_stack *b, int small)
+int	ft_small_pos_b(t_stack *b, int small)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
-	while(b)
+	while (b)
 	{
-		if(b->elem == small)
+		if (b->elem == small)
 			return (pos);
 		b = b->next;
 		pos++;
@@ -55,17 +55,17 @@ int ft_small_pos_b(t_stack *b, int small)
 	return (pos);
 }
 
-int             pos_small_find(t_stack *a, int pos, int small)
+int	pos_small_find(t_stack *a, int pos, int small)
 {
-	int i;
+	int	i;
 
 	i = -1;
-	while(a)
+	while (a)
 	{
 		i++;
-		if(small == a->elem)
+		if (small == a->elem)
 			pos = i++;
 		a = a->next;
 	}
-	return(pos);
+	return (pos);
 }

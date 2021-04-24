@@ -6,14 +6,13 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 16:01:30 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 13:44:51 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/24 16:40:46 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-static	void		test_negative(int *n, int *negative)
+static	void	test_negative(int *n, int *negative)
 {
 	if (*n < 0)
 	{
@@ -22,7 +21,7 @@ static	void		test_negative(int *n, int *negative)
 	}
 }
 
-static	int			ft_nblen(int n)
+static	int	ft_nblen(int n)
 {
 	int	len;
 
@@ -35,7 +34,7 @@ static	int			ft_nblen(int n)
 	return (len);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	int		len;
@@ -49,7 +48,8 @@ char				*ft_itoa(int n)
 	test_negative(&n, &negative);
 	len = ft_nblen(n);
 	len = len + negative;
-	if ((str = (char*)malloc(sizeof(char) * (len + 1))) == NULL)
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
 	str[len--] = '\0';
 	while (n > 0)

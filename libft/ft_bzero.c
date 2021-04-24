@@ -6,10 +6,9 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:11:04 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 13:44:22 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/24 16:39:11 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -18,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	int		i;
 	char	*dst;
 
-	dst = (char*)s;
+	dst = (char *)s;
 	i = 0;
 	while (i < (int)n)
 	{

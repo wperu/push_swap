@@ -6,10 +6,9 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 12:27:58 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 13:47:06 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/24 16:49:16 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef LIBFT_H
 
@@ -18,7 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef	struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;

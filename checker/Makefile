@@ -15,7 +15,7 @@ SRCS			=	\
 					$(addprefix utils/, utils.c ft_del.c) \
 					$(addprefix rotate/, ft_rotate.c) \
 					$(addprefix swap/, ft_swap.c) \
-					$(addprefix get_next_line/, get_next_line.c get_next_line_utils.c) \
+					$(addprefix GNL/, get_next_line.c get_next_line_utils.c) \
 
 
 OBJS			= 		$(addprefix srcs/, $(SRCS:.c=.o))

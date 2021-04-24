@@ -6,22 +6,21 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:40:59 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 13:46:13 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/24 16:44:58 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0' && s[i] != c)
 		i++;
 	if (s[i] == c)
-		return ((char*)s + i);
+		return ((char *)s + i);
 	else
 		return (NULL);
 }

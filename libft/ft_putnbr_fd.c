@@ -6,16 +6,15 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 16:33:21 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 13:46:03 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/24 16:42:35 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long a;
+	long	a;
 
 	a = n;
 	if (a < 0)

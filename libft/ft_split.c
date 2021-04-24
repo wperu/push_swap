@@ -6,14 +6,13 @@
 /*   By: wperu <wperu@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/26 21:58:16 by wperu             #+#    #+#             */
-/*   Updated: 2021/03/12 13:46:10 by wperu            ###   ########lyon.fr   */
+/*   Updated: 2021/04/24 16:44:48 by wperu            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-static	int		ft_count_word(char const *s, char c)
+static	int	ft_count_word(char const *s, char c)
 {
 	int	cword;
 	int	i;
@@ -34,7 +33,7 @@ static	int		ft_count_word(char const *s, char c)
 	return (cword);
 }
 
-static	int		ft_size_word(char const *s, char c, int i)
+static	int	ft_size_word(char const *s, char c, int i)
 {
 	int	size;
 
@@ -46,7 +45,7 @@ static	int		ft_size_word(char const *s, char c, int i)
 
 static	void	ft_freeall(char **split, int index)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= index)
@@ -69,7 +68,8 @@ static	char	**ft_s_split(char **split, char const *s, char c, int i)
 		if (s[i] != c && s[i])
 		{
 			j = ft_size_word(s, c, i);
-			if (!(split[index] = malloc(sizeof(char) * (j + 1))))
+			split[index] = malloc(sizeof(char) * (j + 1));
+			if (!(split[index]))
 			{
 				ft_freeall(split, index);
 				return (NULL);
@@ -84,7 +84,7 @@ static	char	**ft_s_split(char **split, char const *s, char c, int i)
 	return (split);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		i;
@@ -92,9 +92,11 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i = 0;
-	if (!(split = malloc(sizeof(char*) * (ft_count_word(s, c) + 1))))
+	split = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
+	if (!(split))
 		return (NULL);
-	if (!(split = ft_s_split(split, s, c, i)))
+	split = ft_s_split(split, s, c, i);
+	if (!(split))
 	{
 		free(split);
 		return (0);
